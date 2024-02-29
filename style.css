@@ -1,0 +1,267 @@
+* {
+    font-family: Poppins, sans-serif;
+}
+
+body {
+    background-color: #090c02;
+}
+
+.appTittle {
+    color: #f5a65b;
+    font-size: 50px;
+    margin: 40px 0 20px 60px;
+}
+
+#writingArea {
+    display: flex;
+}
+
+fieldset {
+    border: none;
+    width: 90%;
+    margin: auto;
+}
+
+legend {
+    color: #A2AEBB;
+}
+
+#taskButton {
+    height: 75px;
+    margin: 0 0 0 15px;
+}
+#toDoContent {
+width: 90%;
+}
+#toDoContent, #date, #time {
+    resize: none;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: #38302e;
+}
+
+#date, #time {
+    padding: 5px;
+}
+
+
+/*priority task color*/
+
+
+
+.radioCheckColor {
+    margin: 0 10px 0 0;
+    transition: all 0.3s ease-in-out;
+}
+.blue:checked {
+    transform: scale(1.4);
+    accent-color: #0066ff;
+}
+
+.green:checked {
+    transform: scale(1.4);
+    accent-color: #00e056;
+}
+
+.yellow:checked {
+    transform: scale(1.4);
+    accent-color: #ffd000;
+}
+
+.orange:checked {
+    transform: scale(1.4);
+    accent-color: #ff5100;
+}
+
+.red:checked {
+    transform: scale(1.4);
+    accent-color: #ff0000;
+}
+
+#taskContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 85%;
+    background-color: #38302e;
+    margin: 30px auto;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.taskStyle {
+    display: flex;
+    justify-content: space-between;
+    min-width: 100px;
+    max-width: 500px;
+    height: auto;
+    margin: 15px;
+    overflow-wrap: break-word;
+    color: rgb(43, 43, 43);
+    box-shadow: #090c0242 5px 5px 4px;
+    animation: showCard 0.4s forwards;
+}
+@keyframes showCard {
+    0% {
+        opacity: 0;
+        transform: translate(0,-25px);
+    }
+    80% {
+        opacity: 1;
+        transform: translate(0,5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+
+}
+
+
+.taskDescription {
+    max-width: 420px;
+    margin: 15px 15px 25px 15px;
+    font-size: 16px;
+}
+
+.tagPriority {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 5px;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.taskStyle:hover .tagPriority {
+    width: 35px;
+}
+
+.taskTime {
+    margin: 0 15px 5px 15px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.taskDate {
+    margin: 0 15px 5px 15px;
+    font-size: 12px;
+}
+
+/*Eliminate card button */
+
+.eliminateTag {
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 128, 0);
+    background-image: url(img/trash-svgrepo-com.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    opacity: 0;
+    transition: 0.1s ease-in-out;
+    transition-delay: 0.1s;
+}
+
+.taskStyle:hover .eliminateTag {
+    opacity: 1;
+}
+
+.eliminateTag:hover {
+    width: 25px;
+    height: 25px;
+    animation:  wiggle 0.2s forwards;
+    
+}
+
+.bluePriority {
+    background-color: #0066ff;
+}
+.blueCard {
+    background-color: #d8e5ff;
+}
+
+.greenPriority {
+    background-color: #13cc4a;
+}
+.greenCard {
+    background-color: #d8ffe8;
+}
+
+.yellowPriority {
+    background-color: #ffdc14;
+}
+.yellowCard {
+    background-color: #fff8d8;
+}
+
+.orangePriority {
+    background-color: #ff5100;
+}
+.orangeCard {
+    background-color: #ffe3d8;
+}
+
+.redPriority {
+    background-color: #ff0000;
+}
+.redCard {
+    background-color: #ffd8d8;
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(10deg);
+    }
+    20% {
+        transform: rotate(7deg);
+    }
+    30% {
+        transform: rotate(-10deg);
+    }
+    40% {
+        transform: rotate(-7deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    60% {
+        transform: rotate(10deg);
+    }
+    70% {
+        transform: rotate(7deg);
+    }
+    80% {
+        transform: rotate(-10deg);
+    }
+    90% {
+        transform: rotate(-7deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.animationEliminateTag {
+    animation: deleteTag 0.2s forwards;
+}
+
+@keyframes deleteTag {
+    0% {
+        opacity: 1;
+        transform: translate(0,0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(0,-20px);
+    }
+}
+
+.eliminateTag:active {
+    filter: brightness(0);
+}
